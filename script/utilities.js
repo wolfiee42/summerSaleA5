@@ -5,5 +5,4 @@ function namePrice(data) {
     const p = document.createElement('p');
     p.innerText = name +': ' + price;
     checkout.appendChild(p)
-    console.log(checkout);
 }
