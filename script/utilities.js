@@ -23,8 +23,14 @@ function namePrice(data) {
 
     const ammount = document.getElementById('totalPrice').innerText = total;
 
+    if (ammount >= 1) {
+        const btn = document.getElementById('purchasedBtn');
+        btn.removeAttribute('disabled');
 
-    if (ammount > 200) {
+
+    }
+
+    if (ammount >= 200) {
         document.getElementById('coupon-Code').addEventListener('keyup', function (event) {
             const input = event.target.value;
             const btn = document.getElementById('apply-btn');
@@ -36,6 +42,11 @@ function namePrice(data) {
             }
         })
     }
+
+    document.getElementById('homeBtn').addEventListener('click', function () {
+        location.reload();
+    })
+
 }
 
 

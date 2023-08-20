@@ -220,11 +220,11 @@
                     <input type="text" name="" id="coupon-Code" placeholder="Coupon Code"
                         class="border-2 border-inherit px-4 py-2 rounded-l-lg">
                     <button id="apply-btn" disabled
-                        class="bg-[#E527B2] text-white px-4 py-2 rounded-r-lg font-medium uppercase disabled:bg-[#ea53c1] hover:bg-[#ea53c1]">Apply</button>
+                        class="bg-[#E527B2] text-white px-4 py-2 rounded-r-lg font-medium uppercase disabled:bg-[#f097d8] hover:bg-[#ea53c1]">Apply</button>
                 </div>
 
                 <div id="checkOutSection" class="bg-white p-10 rounded-lg shadow-xl">
-                    <div class="py-5">
+                    <div id="cart" class="py-5">
 
                     </div>
                     <hr>
@@ -236,8 +236,8 @@
                     <hr>
                 </div>
 
-                <button onclick="my_modal_1.showModal()"
-                    class="bg-[#E527B2] text-white px-4 py-2 rounded-lg font-medium uppercase w-full lg:w-[75%] my-2 lg:absolute -bottom-7 left-12">Make
+                <button id="purchasedBtn" onclick="my_modal_1.showModal()" disabled
+                    class=" disabled:bg-[#f097d8] bg-[#E527B2] text-white px-4 py-2 rounded-lg font-medium uppercase w-full lg:w-[75%] my-2 lg:absolute -bottom-7 left-12">Make
                     Purchase</button>
                 <dialog id="my_modal_1" class="modal">
                     <form method="dialog" class="modal-box flex flex-col justify-center items-center">
@@ -246,7 +246,7 @@
                         <p class="py-4">You Purchased the product</p>
                         <div class="modal-action">
                             <!-- if there is a button in form, it will close the modal -->
-                            <button
+                            <button id="homeBtn"
                                 class="bg-[#E527B2] text-white px-4 py-2 rounded-lg font-medium uppercase hover:bg-[#ea53c1]">Go
                                 Home</button>
                         </div>
