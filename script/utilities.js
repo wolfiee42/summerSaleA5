@@ -4,14 +4,14 @@ function namePrice(data) {
     const name = data.parentNode.childNodes[1].childNodes[5].innerText;
     const price = data.parentNode.childNodes[1].childNodes[7].innerText;
     const checkout = document.getElementById('checkOutSection').parentNode.childNodes[3].childNodes[1];
-    let discount = total * (20 / 100);
+    let discount = (total * (20 / 100)).toFixed(2);
 
     document.getElementById('apply-btn').addEventListener('click', function () {
 
         const discountAmmount = document.getElementById('discount');
         discountAmmount.innerText = discount;
         const finalAmmount = total - discount
-        document.getElementById('total').innerText = finalAmmount;
+        document.getElementById('total').innerText = finalAmmount.toFixed(2);
     });
 
     const p = document.createElement('p');
@@ -21,7 +21,7 @@ function namePrice(data) {
     const priceValue = parseFloat(price);
     total = parseFloat(total) + parseFloat(priceValue);
 
-    const ammount = document.getElementById('totalPrice').innerText = total;
+    const ammount = document.getElementById('totalPrice').innerText = total.toFixed(2);
 
     if (ammount >= 1) {
         const btn = document.getElementById('purchasedBtn');
