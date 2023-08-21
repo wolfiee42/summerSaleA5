@@ -24,26 +24,24 @@ function namePrice(data) {
 
     let discount = (total * (20 / 100)).toFixed(2);
 
-    document.getElementById('apply-btn').addEventListener('click', function () {
-
-        const discountAmmount = document.getElementById('discount');
-        discountAmmount.innerText = discount;
-        const finalAmmount = total - discount
-        document.getElementById('total').innerText = finalAmmount.toFixed(2);
-    });
-
     if (ammount >= 200) {
-        document.getElementById('coupon-Code').addEventListener('keyup', function (event) {
-            const input = event.target.value;
-            const btn = document.getElementById('apply-btn');
-
-            if (input === "SELL200") {
-                btn.removeAttribute('disabled');
-            } else {
-                btn.setAttribute("disabled", true)
-            }
-        })
+        const btn = document.getElementById('apply-btn');
+        btn.removeAttribute('disabled');
     }
+    document.getElementById('coupon-Code').addEventListener('keyup', function (event) {
+        const input = event.target.value;
+        if(input === "SELL200"){
+            document.getElementById('apply-btn').addEventListener('click', function () {
+
+                const discountAmmount = document.getElementById('discount');
+                discountAmmount.innerText = discount;
+                const finalAmmount = total - discount
+                document.getElementById('total').innerText = finalAmmount.toFixed(2);
+            });
+        }
+
+    })
+
 
     document.getElementById('homeBtn').addEventListener('click', function () {
         location.reload();
